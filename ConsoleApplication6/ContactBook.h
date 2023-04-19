@@ -26,20 +26,17 @@ public:
 		return this->arrayContacts[i];
 	}
 
-	void addContact(Contact contact) {
+	void addContact(Contact& contact) {
 		Contact* temp = new Contact[size + 1];
 		Contact* src = this->arrayContacts;
 		for (int i = 0; i < size; i++) {
-			//temp[i] = this->arrayContacts[i];
-			/*strcpy_s(temp->getName(), strlen(arrayContacts[i].getName()) + 1, arrayContacts[i].getName());
-			strcpy_s(temp->getLastname(), strlen(arrayContacts[i].getLastname()) + 1, arrayContacts[i].getLastname());
-			strcpy_s(temp->getNumber(), strlen(arrayContacts[i].getNumber()) + 1, arrayContacts[i].getNumber());*/
 			copyContact(*(temp+i), *(src+i));
 		}
 
 		copyContact(*(temp+size), contact);
 		delete[] arrayContacts;
-		arrayContacts = temp-size;
+		arrayContacts = temp;
+		size++;
 	}
 
 	string toString() {
