@@ -45,7 +45,7 @@ public:
 		return this->lastname;
 	}
 
-	void setLastname(char* lastname) {
+	void setLastname(const char* lastname) {
 		if (lastname && this->lastname) {
 			delete[] this->lastname;
 			this->lastname = new char[strlen(lastname) + 1];
@@ -57,7 +57,7 @@ public:
 		return this->number;
 	}
 
-	void setNumber(char* number) {
+	void setNumber(const char* number) {
 		if (number && this->number) {
 			delete[] this->number;
 			this->number = new char[strlen(number) + 1];

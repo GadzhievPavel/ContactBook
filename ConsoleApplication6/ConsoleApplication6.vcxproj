@@ -142,10 +142,12 @@
     <ClCompile Include="ConsoleApplication6.cpp" />
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="ContactBook.cpp" />
+    <ClCompile Include="ContactBookFabric.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Contact.h" />
     <ClInclude Include="ContactBook.h" />
+    <ClInclude Include="ContactBookFabric.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -24,12 +24,18 @@
     <ClCompile Include="ContactBook.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="ContactBookFabric.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Contact.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="ContactBook.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="ContactBookFabric.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

@@ -4,7 +4,7 @@
 #include <iostream>
 #include "ContactBook.h"
 #include "Contact.h"
-
+#include "ContactBookFabric.h"
 Contact createContact() {
     char name[50], lastname[50], number[10];
     cout << "enter new contact";
@@ -17,12 +17,13 @@ Contact createContact() {
 
 int main()
 {
-    Contact* arr = new Contact[3]{ {"Ivan","Ivanov","88005553535"},
+    /*Contact* arr = new Contact[3]{ {"Ivan","Ivanov","88005553535"},
         {"Peter","Petrov","909075"},{"Sidor","Sidoorov","241141"}};
     ContactBook book = ContactBook(arr,3);
-    std::cout << book.toString();
-    Contact newContact = createContact();
-    book.addContact(newContact);
+    std::cout << book.toString();*/
+    
+    ContactBookFabric fabricBook("book.txt");
+    ContactBook book = fabricBook.getContactBook();
     std::cout << book.toString();
 }
 
