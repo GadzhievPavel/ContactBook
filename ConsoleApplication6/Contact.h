@@ -29,6 +29,10 @@ public:
 		cout << "create contact default\n";
 	};
 
+	Contact(const Contact& contact):Contact(contact.name,contact.lastname, contact.number) {
+
+	}
+
 	char*& getName() {
 		return this->name;
 	}
@@ -75,6 +79,7 @@ public:
 		return s;
 	}
 	~Contact() {
+		//cout << "\ndelete contact\n";
 		if (this->name) {
 			delete[] name;
 		}

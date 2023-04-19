@@ -29,12 +29,25 @@ public:
 	}
 
 	ContactBook() :ContactBook(nullptr, 0) {};
+	
+	ContactBook(const ContactBook& book) {
+		this->size = book.size;
+		if (book.arrayContacts) {
+			arrayContacts = new Contact[book.size];
+			for (int i = 0; i < size; i++) {
+				arrayContacts[i] = book.arrayContacts[i];
+			}
+		}
+		else {
+			arrayContacts = nullptr;
+		}
+	}
 	Contact getContact(int i) {
 		return this->arrayContacts[i];
 	}
 
 	void addContact(Contact& contact) {
-		if (arrayContacts) {
+		if (size>0) {
 			Contact* temp = new Contact[size + 1];
 			Contact* src = this->arrayContacts;
 			for (int i = 0; i < size; i++) {
@@ -48,8 +61,9 @@ public:
 		}
 		else {
 			arrayContacts = new Contact[1]{ contact };
-			size++;
+			size=1;
 		}
+		//cout << "size book"<<size;
 	}
 
 	string toString() {
@@ -61,6 +75,7 @@ public:
 		return s;
 	}
 	~ContactBook() {
+		//std::cout << "Delete book";
 		if (arrayContacts) {
 			delete[] arrayContacts;
 		}

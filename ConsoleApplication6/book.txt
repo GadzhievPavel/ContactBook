@@ -1,7 +1,8 @@
+<user>
 Peter
 Petrov
 88888888
-
+<\user>
 oleg
 olegov
 7777777

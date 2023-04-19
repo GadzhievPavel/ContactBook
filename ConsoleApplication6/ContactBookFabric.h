@@ -9,37 +9,28 @@ private:
 	string path;
 	ofstream out;//for write
 	ifstream in; // for read
-	ContactBook book;
+	//ContactBook book;
 public:
 	ContactBookFabric(string path) {
 		this->path = path;
 	}
 
-	ContactBook& getContactBook() {
+	ContactBook getContactBook() {
+		ContactBook book;
 		in.open(path);
 		if (in.is_open()) {
-			string buf;
-			int countLine = 0;
-			Contact contact;
-			while (getline(in, buf))
+			
+			while (!in.eof())
 			{
-
-				switch (++countLine)
-				{
-				case 1:
-					contact.setName(buf.c_str());
-					break;
-				case 2:
-					contact.setLastname(buf.c_str());
-					break;
-				case 3:
-					contact.setNumber(buf.c_str());
-					break;
-				default:
-					countLine = 0;
-					book.addContact(contact);
-					break;
+				string databuf[3];
+				for (int i = 0; i < 3; i++) {
+					string buf;
+					getline(in, buf);
+					databuf[i] = buf;
 				}
+				
+				Contact c(databuf[0].c_str(), databuf[1].c_str(), databuf[2].c_str());
+				book.addContact(c);
 			}
 
 		}

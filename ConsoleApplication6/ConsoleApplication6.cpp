@@ -23,7 +23,7 @@ int main()
     std::cout << book.toString();*/
     
     ContactBookFabric fabricBook("book.txt");
-    ContactBook book = fabricBook.getContactBook();
+    ContactBook book(fabricBook.getContactBook());
     std::cout << book.toString();
 }
 
