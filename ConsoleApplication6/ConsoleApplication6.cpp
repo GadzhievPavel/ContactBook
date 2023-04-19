@@ -23,7 +23,7 @@ int main()
     std::cout << book.toString();
     Contact newContact = createContact();
     book.addContact(newContact);
-    std::cout << book.getContact(0).toString();
+    std::cout << book.toString();
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"

@@ -8,10 +8,10 @@ private:
 	Contact* arrayContacts;
 	int size;
 
-	void copyContact(Contact* dst, Contact* src) {
-		dst->setName(src->getName());
-		dst->setLastname(src->getLastname());
-		dst->setNumber(src->getNumber());
+	void copyContact(Contact& dst, Contact& src) {
+		dst.setName(src.getName());
+		dst.setLastname(src.getLastname());
+		dst.setNumber(src.getNumber());
 	}
 public:
 	ContactBook(Contact* contacts, int size) {
@@ -34,10 +34,10 @@ public:
 			/*strcpy_s(temp->getName(), strlen(arrayContacts[i].getName()) + 1, arrayContacts[i].getName());
 			strcpy_s(temp->getLastname(), strlen(arrayContacts[i].getLastname()) + 1, arrayContacts[i].getLastname());
 			strcpy_s(temp->getNumber(), strlen(arrayContacts[i].getNumber()) + 1, arrayContacts[i].getNumber());*/
-			copyContact(temp++, src++);
+			copyContact(*(temp+i), *(src+i));
 		}
 
-		copyContact(temp, &contact);
+		copyContact(*(temp+size), contact);
 		delete[] arrayContacts;
 		arrayContacts = temp-size;
 	}
